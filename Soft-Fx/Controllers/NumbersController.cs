@@ -16,15 +16,15 @@ namespace Soft_Fx.Controllers
         }
 
         [HttpPost("calculate")]
-        public async Task<IActionResult> CalculateNumbers([FromBody]int number)
+        public IActionResult CalculateNumbers([FromBody]int number)
         {
             _calculateService.CalculateSumm(number);
             
-            return Ok(Numbers.NumbersSumm);
+            return Ok();
         }
 
         [HttpGet("summ")]
-        public async Task<IActionResult> ReturnSumm()
+        public IActionResult ReturnSumm()
         {
             return Ok(Numbers.NumbersSumm);
         }
