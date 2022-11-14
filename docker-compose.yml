@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  soft-fx-back:
+  soft-fx:
     image: ${DOCKER_REGISTRY-}softfx
     build:
       context: .

@@ -5,19 +5,17 @@ import {useState} from 'react';
 async function CalculateAsync(){
   var jsonData = {};
   jsonData = Math.floor(Math.random() * 100);
-  var response = await fetch('http://localhost:44410/api/numbers/calculate', {
+  var response = await fetch('http://localhost:5000/api/numbers/calculate', {
       method: 'POST', 
       headers: {
           'Content-Type': 'application/json'
       },
       body: JSON.stringify(jsonData)
   })
-
-  var summ = (await response.json());
 }
 
 async function GetSummAsync(){
-  var response = await fetch('http://localhost:44410/api/numbers/summ')
+  var response = await fetch('http://localhost:5000/api/numbers/summ')
   var summ = (await response.json());
   return summ;
 }
@@ -57,8 +55,6 @@ function App() {
 
   const checkSumm = async (event) => {
     var summ = await GetSummAsync();
-    
-    console.log(summ)
     document.getElementById("resultSumm").textContent=summ;
   }
 
