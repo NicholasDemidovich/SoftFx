@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  soft-fx-back:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5000:80"
+
+  soft-fx-front:
+    ports:
+      - "5001:3000"

@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  soft-fx-back:
+    image: ${DOCKER_REGISTRY-}softfx
+    build:
+      context: .
+      dockerfile: Soft-Fx/Dockerfile
+  
+  soft-fx-front:
+    image: soft-fx-front
+    build:
+      context: ./soft-fx-front
+      dockerfile: Dockerfile
