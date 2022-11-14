@@ -1,6 +1,5 @@
 import './App.css';
 import {useRef} from 'react';
-import {useState} from 'react';
 
 async function CalculateAsync(){
   var jsonData = {};
@@ -65,7 +64,8 @@ function App() {
                 <form onSubmit={handleClick}>
                   <h1 className="header h3 mb-3 fw-normal header _anim-items">Введите задержку в миллисекундах:</h1>
                   <div id="input"className="input-group">
-                    <input ref={delayRef} type="text" className="form-control" placeholder="Задержка"/>
+                    <input ref={delayRef} type="number" className="form-control" placeholder="Задержка"
+                     name="delay" min="1" max="1000000"/>
                     <div className="input-group-append">
                       <button onClick={(e) => setStateFalse()} className="btn btn-outline-secondary" type="submit">Старт</button>
                       <button onClick={(e) => setStateTrue()} className="btn btn-outline-secondary" type="button">Стоп</button>
